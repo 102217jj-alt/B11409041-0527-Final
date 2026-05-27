@@ -27,10 +27,15 @@ class Library:
         except Exception as e:
             print(f"儲存資料時發生錯誤：{e}")
 
+    VALID_STATUSES = ["available", "borrowed"]  # 定義允許的狀態
+
     def add_book(self, title, isbn, status):
         """新增書籍"""
         if self.is_isbn_exist(isbn):
             print("ISBN 已存在，無法新增。")
+            return
+        if status not in self.VALID_STATUSES:
+            print(f"狀態無效！允許的狀態為：{', '.join(self.VALID_STATUSES)}")
             return
         self.books.append({"title": title, "isbn": isbn, "status": status})
         print("書籍新增成功！")
