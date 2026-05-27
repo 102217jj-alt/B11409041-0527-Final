@@ -69,6 +69,26 @@ Prompt C：
 
 ```log
 
+PS C:\Users\pclab\Desktop\NTUST-0527-Final-master> & C:/Users/pclab/AppData/Local/Programs/Python/Python313/python.exe c:/Users/pclab/Desktop/NTUST-0527-Final-master/modern_library.py
+=== 圖書管理系統 v1.0 (Modern) ===
+> add 深入淺出Python/978001/available
+書籍新增成功！
+> add 資料結構理論/978002/available
+書籍新增成功！
+> add 演算法實作/978003/available
+書籍新增成功！
+> add 重複測試書/978001/available
+ISBN 已存在，無法新增。
+> borrow 978002
+書籍已成功借出！
+> show
+書名: 深入淺出Python, ISBN: 978001, 狀態: available
+書名: 資料結構理論, ISBN: 978002, 狀態: borrowed
+書名: 演算法實作, ISBN: 978003, 狀態: available
+> exit
+系統資料已儲存，系統關閉。
+PS C:\Users\pclab\Desktop\NTUST-0527-Final-master>
+
 ```
 
 ### 3.2 產出的資料檔案格式
@@ -77,13 +97,24 @@ Prompt C：
 
 ```json
 [
-  {
-    "title": "XXX",
-    "isbn": "XXX",
-    "status": "XXX"
-  }
+    {
+        "title": "深入淺出Python",
+        "isbn": "978001",
+        "status": "available"
+    },
+    {
+        "title": "資料結構理論",
+        "isbn": "978002",
+        "status": "borrowed"
+    },
+    {
+        "title": "演算法實作",
+        "isbn": "978003",
+        "status": "available"
+    }
 ]
 ```
+
 
 ---
 
